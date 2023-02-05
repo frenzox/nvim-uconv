@@ -1,4 +1,6 @@
-local Conversion = {}
+local Conversion = {
+    decimal_places = "%.4f"
+}
 
 local function is_number(s)
     return s and type(s) == 'number'
@@ -13,13 +15,13 @@ local function convert_with(fn)
 
     assert(is_number(value), 'Not a number')
 
-    local new_value = fn(value)
+    local new_value = string.format(Conversion.decimal_places, fn(value))
     local line = vim.fn.getline('.')
     local col = vim.fn.getcursorcharpos('.')[3]
 
     local index = 1
     local s, e = 0, 0
-    while index < col do
+    while index <= col do
         s, e = line:find(target_word, index, true)
 
         if s <= col and col <= e then
