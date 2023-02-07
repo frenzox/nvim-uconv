@@ -35,6 +35,7 @@ vim.keymap.set({'n', 'v'}, '<leader>tm', uconv.prefix.to_milli, opts)
 ## Usage
 
 Besides defining keymaps to the functions directly, you can also look for the desired conversion by searching for commands with the `UConv` prefix, i.e.: `:UConv<TAB>`.
+Support for the `.` command is also added, athough not thoroughly tested.
 
 ## Disclaimer
 Visual mode is currently only supported through a mapping like described above.
