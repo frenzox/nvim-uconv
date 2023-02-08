@@ -28,7 +28,6 @@ local function is_visual_mode(mode)
 end
 
 local function is_selected(row, col, srow, scol, erow, ecol, mode)
-    print("row: ", row, "col: ", col, "srow: ", srow, "scol: ", scol, "erow: ", erow, "ecol: ", ecol, "mode: ", mode)
     if mode == 'v' then
         if srow <= row and row <= erow then
             if srow == erow then
@@ -126,7 +125,7 @@ function Conversion.convert_with(fn, args)
     local mode = vim.fn.mode()
     local is_dot = false
 
-    if is_visual_mode(mode)  or args.range ~= 0 then
+    if is_visual_mode(mode) or args.range ~= 0 then
         _G.conversion = function()
             if args.range ~= 0 then
                 mode = vim.fn.visualmode()
@@ -138,7 +137,6 @@ function Conversion.convert_with(fn, args)
                 srow, scol, erow, ecol = row, col, row + (erow - srow), col + (ecol - scol)
             end
 
-            print(srow, scol, erow, ecol)
             convert_visual_with(fn, srow, scol, erow, ecol, mode)
             is_dot = true
         end
