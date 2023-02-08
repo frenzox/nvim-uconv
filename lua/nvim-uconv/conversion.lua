@@ -122,12 +122,16 @@ local function convert_with(fn)
     vim.fn.setline('.', new_line)
 end
 
-function Conversion.convert_with(fn)
+function Conversion.convert_with(fn, args)
     local mode = vim.fn.mode()
     local is_dot = false
 
-    if is_visual_mode(mode) then
+    if is_visual_mode(mode)  or args.range ~= 0 then
         _G.conversion = function()
+            if args.range ~= 0 then
+                mode = vim.fn.visualmode()
+            end
+
             local srow, scol, erow, ecol = visual_selection_range()
             if is_dot then
                 local _, row, col, _ = unpack(vim.fn.getcursorcharpos('.'))
