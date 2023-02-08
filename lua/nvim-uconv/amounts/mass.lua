@@ -1,243 +1,243 @@
 local conversion = require('nvim-uconv.conversion')
 local MassConversion = {}
 
-function MassConversion.kilograms_to_ounces()
+function MassConversion.kilograms_to_ounces(args)
     vim.cmd.normal(
         conversion.convert_with(function(kilograms)
             return kilograms / 0.028349523125
-        end)
+        end, args)
     )
 end
 
-function MassConversion.kilograms_to_pounds()
+function MassConversion.kilograms_to_pounds(args)
     vim.cmd.normal(
         conversion.convert_with(function(kilograms)
             return kilograms / 0.45359237
-        end)
+        end, args)
     )
 end
 
-function MassConversion.kilograms_to_stones()
+function MassConversion.kilograms_to_stones(args)
     vim.cmd.normal(
         conversion.convert_with(function(kilograms)
             return kilograms / 6.35029318
-        end)
+        end, args)
     )
 end
 
-function MassConversion.kilograms_to_short_tons()
+function MassConversion.kilograms_to_short_tons(args)
     vim.cmd.normal(
         conversion.convert_with(function(kilograms)
             return kilograms / 907.18474
-        end)
+        end, args)
     )
 end
 
-function MassConversion.kilograms_to_long_tons()
+function MassConversion.kilograms_to_long_tons(args)
     vim.cmd.normal(
         conversion.convert_with(function(kilograms)
             return kilograms / 1016.0469088
-        end)
+        end, args)
     )
 end
 
-function MassConversion.ounces_to_kilograms()
+function MassConversion.ounces_to_kilograms(args)
     vim.cmd.normal(
         conversion.convert_with(function(ounces)
             return ounces * 0.028349523125
-        end)
+        end, args)
     )
 end
 
-function MassConversion.ounces_to_pounds()
+function MassConversion.ounces_to_pounds(args)
     vim.cmd.normal(
         conversion.convert_with(function(ounces)
             return ounces / 16
-        end)
+        end, args)
     )
 end
 
-function MassConversion.ounces_to_stones()
+function MassConversion.ounces_to_stones(args)
     vim.cmd.normal(
         conversion.convert_with(function(ounces)
             return ounces / 224
-        end)
+        end, args)
     )
 end
 
-function MassConversion.ounces_to_short_tons()
+function MassConversion.ounces_to_short_tons(args)
     vim.cmd.normal(
         conversion.convert_with(function(ounces)
             return ounces / 32000
-        end)
+        end, args)
     )
 end
 
-function MassConversion.ounces_to_long_tons()
+function MassConversion.ounces_to_long_tons(args)
     vim.cmd.normal(
         conversion.convert_with(function(ounces)
             return ounces / 35840
-        end)
+        end, args)
     )
 end
 
-function MassConversion.pounds_to_kilograms()
+function MassConversion.pounds_to_kilograms(args)
     vim.cmd.normal(
         conversion.convert_with(function(pounds)
             return pounds * 0.45359237
-        end)
+        end, args)
     )
 end
 
-function MassConversion.pounds_to_ounces()
+function MassConversion.pounds_to_ounces(args)
     vim.cmd.normal(
         conversion.convert_with(function(pounds)
             return pounds * 16
-        end)
+        end, args)
     )
 end
 
-function MassConversion.pounds_to_stones()
+function MassConversion.pounds_to_stones(args)
     vim.cmd.normal(
         conversion.convert_with(function(pounds)
             return pounds / 14
-        end)
+        end, args)
     )
 end
 
-function MassConversion.pounds_to_short_tons()
+function MassConversion.pounds_to_short_tons(args)
     vim.cmd.normal(
         conversion.convert_with(function(pounds)
             return pounds / 2000
-        end)
+        end, args)
     )
 end
 
-function MassConversion.pounds_to_long_tons()
+function MassConversion.pounds_to_long_tons(args)
     vim.cmd.normal(
         conversion.convert_with(function(pounds)
             return pounds / 2240
-        end)
+        end, args)
     )
 end
 
-function MassConversion.stones_to_kilograms()
+function MassConversion.stones_to_kilograms(args)
     vim.cmd.normal(
         conversion.convert_with(function(stones)
             return stones * 6.35029318
-        end)
+        end, args)
     )
 end
 
-function MassConversion.stones_to_ounces()
+function MassConversion.stones_to_ounces(args)
     vim.cmd.normal(
         conversion.convert_with(function(stones)
             return stones * 224
-        end)
+        end, args)
     )
 end
 
-function MassConversion.stones_to_pounds()
+function MassConversion.stones_to_pounds(args)
     vim.cmd.normal(
         conversion.convert_with(function(stones)
             return stones * 14
-        end)
+        end, args)
     )
 end
 
-function MassConversion.stones_to_short_tons()
+function MassConversion.stones_to_short_tons(args)
     vim.cmd.normal(
         conversion.convert_with(function(stones)
             return stones / 142.857142857
-        end)
+        end, args)
     )
 end
 
-function MassConversion.stones_to_long_tons()
+function MassConversion.stones_to_long_tons(args)
     vim.cmd.normal(
         conversion.convert_with(function(stones)
             return stones / 160
-        end)
+        end, args)
     )
 end
 
-function MassConversion.short_tons_to_kilograms()
+function MassConversion.short_tons_to_kilograms(args)
     vim.cmd.normal(
         conversion.convert_with(function(short_tons)
             return short_tons * 907.18474
-        end)
+        end, args)
     )
 end
 
-function MassConversion.short_tons_to_ounces()
+function MassConversion.short_tons_to_ounces(args)
     vim.cmd.normal(
         conversion.convert_with(function(short_tons)
             return short_tons * 32000
-        end)
+        end, args)
     )
 end
 
-function MassConversion.short_tons_to_pounds()
+function MassConversion.short_tons_to_pounds(args)
     vim.cmd.normal(
         conversion.convert_with(function(short_tons)
             return short_tons * 2000
-        end)
+        end, args)
     )
 end
 
-function MassConversion.short_tons_to_stones()
+function MassConversion.short_tons_to_stones(args)
     vim.cmd.normal(
         conversion.convert_with(function(short_tons)
             return short_tons * 142.857142857
-        end)
+        end, args)
     )
 end
 
-function MassConversion.short_tons_to_long_tons()
+function MassConversion.short_tons_to_long_tons(args)
     vim.cmd.normal(
         conversion.convert_with(function(short_tons)
             return short_tons / 1.12
-        end)
+        end, args)
     )
 end
 
-function MassConversion.long_tons_to_kilograms()
+function MassConversion.long_tons_to_kilograms(args)
     vim.cmd.normal(
         conversion.convert_with(function(long_tons)
             return long_tons * 1016.0469088
-        end)
+        end, args)
     )
 end
 
-function MassConversion.long_tons_to_ounces()
+function MassConversion.long_tons_to_ounces(args)
     vim.cmd.normal(
         conversion.convert_with(function(long_tons)
             return long_tons * 35840
-        end)
+        end, args)
     )
 end
 
-function MassConversion.long_tons_to_pounds()
+function MassConversion.long_tons_to_pounds(args)
     vim.cmd.normal(
         conversion.convert_with(function(long_tons)
             return long_tons * 2240
-        end)
+        end, args)
     )
 end
 
-function MassConversion.long_tons_to_stones()
+function MassConversion.long_tons_to_stones(args)
     vim.cmd.normal(
         conversion.convert_with(function(long_tons)
             return long_tons * 160
-        end)
+        end, args)
     )
 end
 
-function MassConversion.long_tons_to_short_tons()
+function MassConversion.long_tons_to_short_tons(args)
     vim.cmd.normal(
         conversion.convert_with(function(long_tons)
             return long_tons * 1.12
-        end)
+        end, args)
     )
 end
 

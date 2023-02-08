@@ -1,402 +1,402 @@
 local conversion = require('nvim-uconv.conversion')
-local PrefixConversions = {}
+local PrefixConversion = {}
 
-function PrefixConversions.to_quetta()
+function PrefixConversion.to_quetta(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-30
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_ronna()
+function PrefixConversion.to_ronna(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-27
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_yotta()
+function PrefixConversion.to_yotta(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-24
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_zetta()
+function PrefixConversion.to_zetta(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-21
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_exa()
+function PrefixConversion.to_exa(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-18
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_peta()
+function PrefixConversion.to_peta(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-15
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_tera()
+function PrefixConversion.to_tera(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-12
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_giga()
+function PrefixConversion.to_giga(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-9
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_mega()
+function PrefixConversion.to_mega(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-6
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_kilo()
+function PrefixConversion.to_kilo(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-3
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_hecto()
+function PrefixConversion.to_hecto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-2
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_deca()
+function PrefixConversion.to_deca(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-1
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_deci()
+function PrefixConversion.to_deci(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^1
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_centi()
+function PrefixConversion.to_centi(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^2
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_milli()
+function PrefixConversion.to_milli(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^3
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_micro()
+function PrefixConversion.to_micro(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^6
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_nano()
+function PrefixConversion.to_nano(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^9
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_pico()
+function PrefixConversion.to_pico(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^12
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_femto()
+function PrefixConversion.to_femto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^15
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_atto()
+function PrefixConversion.to_atto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^18
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_zepto()
+function PrefixConversion.to_zepto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^21
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_yocto()
+function PrefixConversion.to_yocto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^24
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_ronto()
+function PrefixConversion.to_ronto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^27
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.to_quecto()
+function PrefixConversion.to_quecto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^30
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_quetta()
+function PrefixConversion.from_quetta(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^30
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_ronna()
+function PrefixConversion.from_ronna(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^27
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_yotta()
+function PrefixConversion.from_yotta(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^24
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_zetta()
+function PrefixConversion.from_zetta(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^21
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_exa()
+function PrefixConversion.from_exa(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^18
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_peta()
+function PrefixConversion.from_peta(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^15
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_tera()
+function PrefixConversion.from_tera(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^12
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_giga()
+function PrefixConversion.from_giga(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^9
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_mega()
+function PrefixConversion.from_mega(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^6
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_kilo()
+function PrefixConversion.from_kilo(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^3
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_hecto()
+function PrefixConversion.from_hecto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^2
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_deca()
+function PrefixConversion.from_deca(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^1
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_deci()
+function PrefixConversion.from_deci(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-1
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_centi()
+function PrefixConversion.from_centi(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-2
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_milli()
+function PrefixConversion.from_milli(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-3
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_micro()
+function PrefixConversion.from_micro(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-6
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_nano()
+function PrefixConversion.from_nano(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-9
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_pico()
+function PrefixConversion.from_pico(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-12
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_femto()
+function PrefixConversion.from_femto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-15
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_atto()
+function PrefixConversion.from_atto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-18
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_zepto()
+function PrefixConversion.from_zepto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-21
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_yocto()
+function PrefixConversion.from_yocto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-24
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_ronto()
+function PrefixConversion.from_ronto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-27
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.from_quecto()
+function PrefixConversion.from_quecto(args)
     vim.cmd.normal(
         conversion.convert_with(function(value)
             return value * 10^-30
-        end)
+        end, args)
     )
 end
 
-function PrefixConversions.with_commands()
+function PrefixConversion.with_commands()
     local opts = {}
 
-    for f_name, _ in pairs(PrefixConversions) do
+    for f_name, _ in pairs(PrefixConversion) do
         vim.api.nvim_create_user_command(
             "UConv" .. f_name:gsub("_(.)", string.upper):gsub("^%l", string.upper),
-            PrefixConversions[f_name],
+            PrefixConversion[f_name],
             opts
         )
     end
 
-    return PrefixConversions
+    return PrefixConversion
 end
 
-return PrefixConversions
+return PrefixConversion
