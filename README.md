@@ -38,4 +38,4 @@ Besides defining keymaps to the functions directly, you can also look for the de
 Support for the `.` command is also added, athough not thoroughly tested.
 
 ## Disclaimer
-Visual mode is currently only supported through a mapping like described above.
+A lot of the conversions were added with aid from Github Copilot and not verified/tested, so they could very well be wrong. Please if you spot a wrong conversion open an issue or a PR.
