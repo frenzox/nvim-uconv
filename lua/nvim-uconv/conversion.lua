@@ -55,7 +55,8 @@ local function convert_visual_with(fn, srow, scol, erow, ecol, mode)
     for i, line in ipairs(lines) do
         local index = 1
         local s, e = 0, 0
-        local sn = 0
+        local local_scol = scol
+        local local_ecol = ecol
 
         while index <= #line do
             s, e = line:find('%d+[_%d+]*[%.]?[%d+]*', index)
@@ -64,12 +65,8 @@ local function convert_visual_with(fn, srow, scol, erow, ecol, mode)
                 break
             end
 
-            if sn == 0 then
-                sn = s
-            end
-
-            if is_selected(srow + i - 1, s, srow, scol, erow, ecol, mode) or
-               is_selected(srow + i - 1, e, srow, scol, erow, ecol, mode) then
+            if is_selected(srow + i - 1, s, srow, local_scol, erow, local_ecol, mode) or
+               is_selected(srow + i - 1, e, srow, local_scol, erow, local_ecol, mode) then
 
                 local target_word = line:sub(s, e)
                 local maybe_number_str = target_word:gsub('_', '')
@@ -79,6 +76,8 @@ local function convert_visual_with(fn, srow, scol, erow, ecol, mode)
                     local new_value = string.format(Conversion.format, fn(value))
                     line = line:sub(1, s - 1) .. new_value .. line:sub(e + 1)
                     index = s + #new_value
+                    local_scol = local_scol + #new_value - #target_word
+                    local_ecol = local_ecol + #new_value - #target_word
                 else
                     index = e + 1
                 end
