@@ -1,34 +1,34 @@
 local Conversion = {
-    format = "%f"
+    format = "%f",
 }
 
 local function is_number(s)
-    return s and type(s) == 'number'
+    return s and type(s) == "number"
 end
 
 local function visual_selection_range()
-  local _, csrow, cscol, _ = unpack(vim.fn.getpos("'<"))
-  local _, cerow, cecol, _ = unpack(vim.fn.getpos("'>"))
-  if csrow < cerow or (csrow == cerow and cscol <= cecol) then
-    return csrow, cscol, cerow, cecol
-  else
-    return cerow, cecol, csrow , cscol
-  end
+    local _, csrow, cscol, _ = unpack(vim.fn.getpos("'<"))
+    local _, cerow, cecol, _ = unpack(vim.fn.getpos("'>"))
+    if csrow < cerow or (csrow == cerow and cscol <= cecol) then
+        return csrow, cscol, cerow, cecol
+    else
+        return cerow, cecol, csrow, cscol
+    end
 end
 
 local function is_visual_mode(mode)
     return (
-        mode == 'v' or
-        mode == 'V' or
-        mode == 'vs' or
-        mode == 'Vs' or
-        mode == '' or
-        mode == 's'
+        mode == "v"
+        or mode == "V"
+        or mode == "vs"
+        or mode == "Vs"
+        or mode == ""
+        or mode == "s"
     )
 end
 
 local function is_selected(row, col, srow, scol, erow, ecol, mode)
-    if mode == 'v' then
+    if mode == "v" then
         if srow <= row and row <= erow then
             if srow == erow then
                 return scol <= col and col <= ecol
@@ -40,9 +40,9 @@ local function is_selected(row, col, srow, scol, erow, ecol, mode)
                 return true
             end
         end
-    elseif mode == 'V' then
+    elseif mode == "V" then
         return srow <= row and row <= erow
-    elseif mode == '' then
+    elseif mode == "" then
         return srow <= row and row <= erow and scol <= col and col <= ecol
     end
 end
@@ -58,17 +58,18 @@ local function convert_visual_with(fn, srow, scol, erow, ecol, mode)
         local local_ecol = ecol
 
         while index <= #line do
-            s, e = line:find('%d+[_%d+]*[%.]?[%d+]*', index)
+            s, e = line:find("%d+[_%d+]*[%.]?[%d+]*", index)
 
             if s == nil then
                 break
             end
 
-            if is_selected(srow + i - 1, s, srow, local_scol, erow, local_ecol, mode) or
-               is_selected(srow + i - 1, e, srow, local_scol, erow, local_ecol, mode) then
-
+            if
+                is_selected(srow + i - 1, s, srow, local_scol, erow, local_ecol, mode)
+                or is_selected(srow + i - 1, e, srow, local_scol, erow, local_ecol, mode)
+            then
                 local target_word = line:sub(s, e)
-                local maybe_number_str = target_word:gsub('_', '')
+                local maybe_number_str = target_word:gsub("_", "")
                 local value = tonumber(maybe_number_str)
 
                 if is_number(value) then
@@ -92,18 +93,18 @@ local function convert_visual_with(fn, srow, scol, erow, ecol, mode)
 end
 
 local function convert_with(fn)
-    vim.opt.iskeyword:remove({' '})
-    vim.opt.iskeyword:append({'_', '-', '+', '.'})
+    vim.opt.iskeyword:remove({ " " })
+    vim.opt.iskeyword:append({ "_", "-", "+", "." })
 
-    local target_word = vim.fn.expand('<cword>')
-    local numeric_str = target_word:gsub('_', '')
+    local target_word = vim.fn.expand("<cword>")
+    local numeric_str = target_word:gsub("_", "")
     local value = tonumber(numeric_str)
 
-    assert(is_number(value), 'Not a number')
+    assert(is_number(value), "Not a number")
 
     local new_value = string.format(Conversion.format, fn(value))
-    local line = vim.fn.getline('.')
-    local col = vim.fn.getcursorcharpos('.')[3]
+    local line = vim.fn.getline(".")
+    local col = vim.fn.getcursorcharpos(".")[3]
 
     local index = 1
     local s, e = 0, 0
@@ -118,14 +119,14 @@ local function convert_with(fn)
     end
 
     local new_line = line:sub(1, s - 1) .. new_value .. line:sub(e + 1)
-    vim.fn.setline('.', new_line)
+    vim.fn.setline(".", new_line)
 end
 
 function Conversion.convert_with(fn, args)
     local mode = vim.fn.mode()
     local is_dot = false
 
-    if is_visual_mode(mode) or args.range ~= 0 then
+    if is_visual_mode(mode) or (args ~= nil and args.range ~= 0) then
         _G.conversion = function()
             if args.range ~= 0 then
                 mode = vim.fn.visualmode()
@@ -133,7 +134,7 @@ function Conversion.convert_with(fn, args)
 
             local srow, scol, erow, ecol = visual_selection_range()
             if is_dot then
-                local _, row, col, _ = unpack(vim.fn.getcursorcharpos('.'))
+                local _, row, col, _ = unpack(vim.fn.getcursorcharpos("."))
                 srow, scol, erow, ecol = row, col, row + (erow - srow), col + (ecol - scol)
             end
 

@@ -1,16 +1,16 @@
-local conversion = require('nvim-uconv.conversion')
+local conversion = require("nvim-uconv.conversion")
 local FrequencyConversion = {}
 
-function FrequencyConversion.hertz_to_radians_per_second(args)
-    return conversion.convert_with(function(hertz)
+function FrequencyConversion.hertz_to_radians_per_second(args))
+    vim.cmd.normal(conversion.convert_with(function(hertz)
         return hertz * 2 * math.pi
-    end, args)
+    end, args))
 end
 
-function FrequencyConversion.radians_per_second_to_hertz(args)
-    return conversion.convert_with(function(rad_per_sec)
+function FrequencyConversion.radians_per_second_to_hertz(args))
+    vim.cmd.normal(conversion.convert_with(function(rad_per_sec)
         return rad_per_sec / (2 * math.pi)
-    end, args)
+    end, args))
 end
 
 function FrequencyConversion.with_commands()
