@@ -9,7 +9,6 @@ function UnitConversion.setup(cfg)
 
     UnitConversion.angle = require("nvim-uconv.amounts.angle").with_commands()
     UnitConversion.area = require("nvim-uconv.amounts.area").with_commands()
-    UnitConversion.data = require("nvim-uconv.amounts.data").with_commands()
     UnitConversion.energy = require("nvim-uconv.amounts.energy").with_commands()
     UnitConversion.length = require("nvim-uconv.amounts.length").with_commands()
     UnitConversion.mass = require("nvim-uconv.amounts.mass").with_commands()
@@ -20,6 +19,7 @@ function UnitConversion.setup(cfg)
     UnitConversion.volume = require("nvim-uconv.amounts.volume").with_commands()
 
     UnitConversion.prefix = require("nvim-uconv.prefix").with_commands()
+    UnitConversion.data_prefix = require("nvim-uconv.data_prefix").with_commands()
 end
 
 return UnitConversion
