@@ -98,7 +98,7 @@ function AngleConversion.turns_to_gradians()
 end
 
 function AngleConversion.with_commands()
-    local opts = {}
+    local opts = {range = true}
 
     for f_name, _ in pairs(AngleConversion) do
         vim.api.nvim_create_user_command(

@@ -386,7 +386,7 @@ function PrefixConversions.from_quecto()
 end
 
 function PrefixConversions.with_commands()
-    local opts = {}
+    local opts = { range = true }
 
     for f_name, _ in pairs(PrefixConversions) do
         vim.api.nvim_create_user_command(

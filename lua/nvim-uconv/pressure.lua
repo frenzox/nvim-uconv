@@ -162,7 +162,7 @@ function PressureConversion.pounds_per_square_foot_to_pascals()
 end
 
 function PressureConversion.with_commands()
-    local opts = {}
+    local opts = { range = true }
 
     for f_name, _ in pairs(PressureConversion) do
         vim.api.nvim_create_user_command(

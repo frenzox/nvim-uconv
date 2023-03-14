@@ -242,7 +242,7 @@ function MassConversion.long_tons_to_short_tons()
 end
 
 function MassConversion.with_commands()
-    local opts = {}
+    local opts = { range = true }
 
     for f_name, _ in pairs(MassConversion) do
         vim.api.nvim_create_user_command(

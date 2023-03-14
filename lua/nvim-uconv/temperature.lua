@@ -50,7 +50,7 @@ function TemperatureConversion.fahrenheit_to_celsius()
 end
 
 function TemperatureConversion.with_commands()
-    local opts = {}
+    local opts = { range = true }
 
     for f_name, _ in pairs(TemperatureConversion) do
         vim.api.nvim_create_user_command(
