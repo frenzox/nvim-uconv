@@ -14,7 +14,7 @@ function FrequencyConversion.radians_per_second_to_hertz(args))
 end
 
 function FrequencyConversion.with_commands()
-    local opts = {}
+    local opts = { range = true }
 
     for f_name, _ in pairs(FrequencyConversion) do
         vim.api.nvim_create_user_command(
