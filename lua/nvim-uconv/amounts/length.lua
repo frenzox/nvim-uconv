@@ -182,7 +182,7 @@ function LengthConversion.nautical_miles_to_miles(args)
 end
 
 function LengthConversion.with_commands()
-    local opts = {}
+    local opts = { range = true }
 
     for f_name, _ in pairs(LengthConversion) do
         vim.api.nvim_create_user_command(

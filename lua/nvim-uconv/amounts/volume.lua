@@ -662,7 +662,7 @@ function VolumeConversion.teaspoons_to_tablespoons(args)
 end
 
 function VolumeConversion.with_commands()
-    local opts = {}
+    local opts = { range = true }
 
     for f_name, _ in pairs(VolumeConversion) do
         vim.api.nvim_create_user_command(

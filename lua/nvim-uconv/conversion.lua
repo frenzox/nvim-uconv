@@ -43,7 +43,7 @@ local function is_selected(row, col, srow, scol, erow, ecol, mode)
     elseif mode == "V" then
         return srow <= row and row <= erow
     elseif mode == "" then
-        return srow <= row and row <= erow and scol <= col and col <= ecol
+        return srow <= row and row <= erow and col <= col and col <= ecol
     end
 end
 
@@ -65,8 +65,8 @@ local function convert_visual_with(fn, srow, scol, erow, ecol, mode)
             end
 
             if
-                is_selected(srow + i - 1, s, srow, local_scol, erow, local_ecol, mode)
-                or is_selected(srow + i - 1, e, srow, local_scol, erow, local_ecol, mode)
+                math.max(e, local_ecol) - math.min(s, local_scol)
+                <= (e - s) + (local_ecol - local_scol)
             then
                 local target_word = line:sub(s, e)
                 local maybe_number_str = target_word:gsub("_", "")
@@ -128,7 +128,7 @@ function Conversion.convert_with(fn, args)
 
     if is_visual_mode(mode) or (args ~= nil and args.range ~= 0) then
         _G.conversion = function()
-            if args.range ~= 0 then
+            if args ~= nil and args.range ~= 0 then
                 mode = vim.fn.visualmode()
             end
 

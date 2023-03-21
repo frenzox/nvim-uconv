@@ -452,7 +452,7 @@ function SpeedConversion.inches_per_hour_to_inches_per_minute(args)
 end
 
 function SpeedConversion.with_commands()
-    local opts = {}
+    local opts = { range = true }
 
     for f_name, _ in pairs(SpeedConversion) do
         vim.api.nvim_create_user_command(
